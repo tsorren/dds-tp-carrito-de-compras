@@ -2,7 +2,7 @@
 
 ## NÚMERO DE GRUPO: 5
 
-## Integrantes:
+### Integrantes:
 | Nombre | Legajo | 
 |:------:|:------:|
 | Nicolás Delorte       | 172.817-9|
