@@ -1,8 +1,8 @@
 package dominio.direccion;
 
-public class Provincia {
+public class Ciudad {
     private String nombre;
-    private Pais pais;
+    private Provincia provincia;
 
     public String getNombre() {
         return nombre;
@@ -11,10 +11,10 @@ public class Provincia {
         this.nombre = nombre;
     }
 
-    public Pais getPais() {
-        return pais;
+    public Provincia getProvincia() {return provincia;}
+    public void setProvincia(Provincia provincia) {
+        this.provincia = provincia;
     }
-    public void setPais(Pais pais) {
-        this.pais = pais;
-    }
+
+
 }

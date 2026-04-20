@@ -8,7 +8,6 @@ public class Tarjeta {
     public String getNombre() {
         return nombre;
     }
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -16,7 +15,6 @@ public class Tarjeta {
     public MarcaTarjeta getMarcaTarjeta() {
         return MarcaTarjeta;
     }
-
     public void setMarcaTarjeta(MarcaTarjeta marcaTarjeta) {
         MarcaTarjeta = marcaTarjeta;
     }
@@ -24,7 +22,6 @@ public class Tarjeta {
     public String getUltimosDigitos() {
         return ultimosDigitos;
     }
-
     public void setUltimosDigitos(String ultimosDigitos) {
         this.ultimosDigitos = ultimosDigitos;
     }
