@@ -12,8 +12,8 @@ public class Direccion {
 
     public String getDireccion () {
         String base = this.calle1 + " " +  (this.sinAltura ? "S/N" : this.altura);
-        if (this.departamento != null && this.departamento.isEmpty()){
-            base += "Dpto: " + this.departamento;
+        if (this.departamento != null && !this.departamento.isEmpty()){
+            base += "Dpto: " + this.departamento + this.piso;
         }
         return base;
     }

@@ -3,20 +3,21 @@ package dominio.cliente;
 import dominio.carrito.Carrito;
 import dominio.direccion.Direccion;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Cliente {
     private String nombre;
     private String apellido;
     private String email;
-    private List<Direccion> direcciones;
-    private List<Tarjeta> tarjetas;
-    private List<Carrito> carritos;
+    private final List<Direccion> direcciones = new ArrayList<>();
+    private final List<Tarjeta> tarjetas = new ArrayList<>();
+    private final List<Carrito> carritos = new ArrayList<>();
     private Boolean esPreferencial;
 
-    private static float limiteDeuda;
+    private static Double limiteDeuda;
 
-    public static void setLimiteDeuda(float limiteDeuda) {
+    public static void setLimiteDeuda(Double limiteDeuda) {
         Cliente.limiteDeuda = limiteDeuda;
     }
 
@@ -61,5 +62,37 @@ public class Cliente {
 
     public Boolean estaHabilitado () {
         return this.getMontoDeuda() < Cliente.limiteDeuda;
+    }
+
+    public List<Tarjeta> getTarjetas() {
+        return tarjetas;
+    }
+
+    public List<Direccion> getDirecciones() {
+        return direcciones;
+    }
+
+    public void agregarDireccion(Direccion d) {
+        direcciones.add(d);
+    }
+
+    public void quitarDireccion(Direccion d) {
+        direcciones.remove(d);
+    }
+
+    public void agregarTarjeta(Tarjeta t) {
+        tarjetas.add(t);
+    }
+
+    public void quitarTarjeta(Tarjeta t) {
+        tarjetas.remove(t);
+    }
+
+    public void agregarCarrito(Carrito c) {
+        carritos.add(c);
+    }
+
+    public void quitarCarrito(Carrito c) {
+        carritos.remove(c);
     }
 }
