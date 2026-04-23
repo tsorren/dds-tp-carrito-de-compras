@@ -3,13 +3,13 @@ package dominio.carrito;
 import java.time.LocalDate;
 
 public class PrecioProducto {
-    private LocalDate fehcaInicioVigencia;
+    private LocalDate fechaInicioVigencia;
     private LocalDate fechaFinVigencia;
     private Double precio;
 
-    public LocalDate getFehcaInicioVigencia() {return fehcaInicioVigencia;}
-    public void setFehcaInicioVigencia(LocalDate fehcaInicioVigencia) {
-        this.fehcaInicioVigencia = fehcaInicioVigencia;
+    public LocalDate getFechaInicioVigencia() {return fechaInicioVigencia;}
+    public void setFechaInicioVigencia(LocalDate fehcaInicioVigencia) {
+        this.fechaInicioVigencia = fehcaInicioVigencia;
     }
 
     public LocalDate getFechaFinVigencia () {return fechaFinVigencia;}
@@ -18,7 +18,7 @@ public class PrecioProducto {
     }
 
     public Boolean getCumpleVigencia(LocalDate fecha) {
-        return !fecha.isBefore(this.fehcaInicioVigencia) && !fecha.isAfter(this.fechaFinVigencia);
+        return !fecha.isBefore(this.fechaInicioVigencia) && !fecha.isAfter(this.fechaFinVigencia);
     }
 
     public Double getPrecio() {return precio;}

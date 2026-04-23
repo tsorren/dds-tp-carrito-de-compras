@@ -20,7 +20,7 @@ class ItemTest {
         // Settear producto y añadirlo al item con una cantidad mayor a 1
         PrecioProducto precioInicial = new PrecioProducto();
         precioInicial.setPrecio(20.0);
-        precioInicial.setFehcaInicioVigencia(LocalDate.now().minusDays(10));
+        precioInicial.setFechaInicioVigencia(LocalDate.now().minusDays(10));
         precioInicial.setFechaFinVigencia(LocalDate.now().plusDays(10));
         p.agregarNuevoPrecio(precioInicial);
 
@@ -45,13 +45,13 @@ class ItemTest {
 
         PrecioProducto precioViejo = new PrecioProducto();
         precioViejo.setPrecio(20.0);
-        precioViejo.setFehcaInicioVigencia(LocalDate.now().minusDays(10));
+        precioViejo.setFechaInicioVigencia(LocalDate.now().minusDays(10));
         precioViejo.setFechaFinVigencia(LocalDate.now().minusDays(1)); // venció ayer
         p.agregarNuevoPrecio(precioViejo);
 
         PrecioProducto precioNuevo = new PrecioProducto();
         precioNuevo.setPrecio(30.0);
-        precioNuevo.setFehcaInicioVigencia(LocalDate.now());
+        precioNuevo.setFechaInicioVigencia(LocalDate.now());
         precioNuevo.setFechaFinVigencia(LocalDate.now().plusDays(30));
         p.agregarNuevoPrecio(precioNuevo);
 
