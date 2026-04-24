@@ -16,7 +16,9 @@ public class Carrito {
     private final List<Pago> pagos = new ArrayList<>();
     private LocalDate fechaCompra;
 
-    public Double getMontoPagado(){
+    private static final double DESCUENTO_PREFERENCIAL = 0.3;
+
+    public double getMontoPagado(){
         double montoAbonado = 0.0;
         for(Pago pago: this.pagos){
             montoAbonado += pago.getMonto();
@@ -24,15 +26,24 @@ public class Carrito {
         return montoAbonado;
     }
 
-    public Double getMontoCarrito(){
-        double montoTotal = 0.0;
-        for (Item item : this.items){
-            montoTotal += item.getPrecio();
+    private double calcularDescuento(){
+        double factorDescuentoTotal = 1;
+        if(cliente.getEsPreferencial()){
+            factorDescuentoTotal -= DESCUENTO_PREFERENCIAL;
         }
-        return  montoTotal;
+        return factorDescuentoTotal;
     }
 
-    public Double getMontoDeuda(){
+    public double getMontoCarrito(){
+        double subTotal = 0.0;
+        for (Item item : this.items){
+            subTotal += item.getPrecio();
+        }
+        double factorDescuento = calcularDescuento();
+        return subTotal * factorDescuento;
+    }
+
+    public double getMontoDeuda(){
         return this.getMontoCarrito() - this.getMontoPagado();
     }
 
