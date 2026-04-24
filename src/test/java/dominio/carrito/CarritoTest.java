@@ -1,5 +1,6 @@
 package dominio.carrito;
 
+import dominio.cliente.Cliente;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -10,10 +11,15 @@ import static org.junit.jupiter.api.Assertions.*;
 class CarritoTest {
 
     private Carrito carrito;
+    private Cliente cliente;
 
     @BeforeEach
     void setUp() {
+        cliente = new Cliente();
+        cliente.setEsPreferencial(false);
+
         carrito = new Carrito();
+        carrito.setCliente(cliente);
     }
 
     //Debería coincidir el total de los pagos 100 + 50 = 150

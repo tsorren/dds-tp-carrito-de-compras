@@ -20,10 +20,7 @@ class ClienteTest {
     @BeforeEach
     void setup() {
         c = new Cliente();
-
-        ca = new Carrito();
-        i = new Item();
-        p = new Producto();
+        c.setEsPreferencial(false);
 
         t = new Tarjeta();
         t.setNombre(c.getNombre());
@@ -33,13 +30,19 @@ class ClienteTest {
         precioInicial.setPrecio(100.0);
         precioInicial.setFechaInicioVigencia(LocalDate.now().minusDays(10));
         precioInicial.setFechaFinVigencia(LocalDate.now().plusDays(10));
+
+
+        i = new Item();
+        p = new Producto();
         p.agregarNuevoPrecio(precioInicial);
 
         i.setProducto(p);
         i.setCantidad(5);
         i.setPrecioUnitario(p.getPrecio(LocalDate.now()));
 
+        ca = new Carrito();
         ca.agregarItem(i);
+        ca.setCliente(c);
 
         c.agregarCarrito(ca);
 
